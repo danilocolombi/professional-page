@@ -57,12 +57,12 @@ export const EXPERIENCE: Experience[] = [
     industry: 'Software Consulting',
     period: 'Jul 2024 – Present',
     location: 'Remote',
-    tags: ['Angular', '.NET Core', 'Azure'],
+    tags: ['Angular', '.NET Core', '.NET Framework', 'Microservices', 'Azure'],
     isCurrent: true,
     description: [
-      'Build and maintain client-facing web applications end-to-end, from API design in .NET Core to Angular UI delivery.',
-      'Own features across the full stack in a fully remote, cross-functional Agile team.',
-      'Deploy and manage cloud infrastructure on Azure, including CI/CD pipelines and environment configuration.',
+      'Maintained and extended a legacy .NET Framework 4.8 ERP, ensuring stability and continuity for critical business operations.',
+      'Developed scheduling and production management software with multiple third-party integrations, built as microservices and deployed on Azure.',
+      'Conducted technical interviews for engineering candidates, contributing to team growth and hiring standards.',
     ],
   },
   {
@@ -74,7 +74,7 @@ export const EXPERIENCE: Experience[] = [
     tags: ['Angular', 'Azure DevOps', '.NET Core'],
     isCurrent: false,
     description: [
-      'Developed internal tooling and operational dashboards for manufacturing teams across multiple global regions.',
+      'Developed internal tooling and operational dashboards for manufacturing teams.',
       'Integrated Azure DevOps pipelines into engineering workflows, improving release automation and deployment reliability.',
       'Collaborated with cross-functional teams to deliver full-stack features in a large-scale enterprise environment.',
     ],

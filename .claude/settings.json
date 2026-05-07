@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:marketplace.visualstudio.com)",
+      "Bash(npm start *)",
+      "Bash(curl -s http://localhost:4200)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); proj=list\\(d['projects'].keys\\(\\)\\)[0]; build=d['projects'][proj]['architect']['build']; print\\(json.dumps\\(build.get\\('options',{}\\), indent=2\\)\\)\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d['projects'], indent=2\\)\\)\")"
+    ]
+  }
+}

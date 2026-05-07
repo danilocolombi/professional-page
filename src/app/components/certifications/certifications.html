@@ -1,0 +1,57 @@
+<div class="py-24 px-4 bg-zinc-900/40">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="mb-16">
+      <p class="text-violet-400 font-mono text-sm uppercase tracking-widest mb-3">Credentials</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-white">Certifications</h2>
+      <div class="w-16 h-1 bg-violet-500 rounded-full mt-4"></div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      @for (cert of certifications; track cert.title) {
+        <div class="bg-zinc-900 rounded-xl p-6 border border-zinc-800 hover:border-zinc-700 hover:-translate-y-0.5 transition-all duration-200 flex flex-col gap-4">
+
+          <!-- Icon badge -->
+          <div
+            class="w-12 h-12 rounded-xl flex items-center justify-center text-lg font-bold shrink-0"
+            [class]="cert.type === 'azure'
+              ? 'bg-[#0078D4]/10 border border-[#0078D4]/20 text-[#0078D4]'
+              : 'bg-red-500/10 border border-red-500/20 text-red-400'"
+          >
+            @if (cert.type === 'azure') {
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22.379 23.343a1.62 1.62 0 001.617-1.557H24L13.11.657A1.616 1.616 0 0011.618 0a1.617 1.617 0 00-1.555 1.183L.054 21.453a1.619 1.619 0 001.174 1.958c.11.028.225.043.34.043h4.057a1.617 1.617 0 001.538-1.12l4.455-12.906 7.085 12.793c.3.542.867.88 1.476.88l2.2-.758z"/>
+              </svg>
+            } @else {
+              <span class="text-sm font-bold">CA</span>
+            }
+          </div>
+
+          <!-- Content -->
+          <div class="flex-1">
+            <p
+              class="text-xs font-semibold uppercase tracking-wider mb-2"
+              [class]="cert.type === 'azure' ? 'text-[#0078D4]' : 'text-red-400'"
+            >
+              {{ cert.issuer }}
+            </p>
+            <h3 class="text-base font-semibold text-white leading-snug">{{ cert.title }}</h3>
+          </div>
+
+          <!-- Bottom accent -->
+          <div class="border-t border-zinc-800 pt-4">
+            <a
+              [href]="cert.verifyUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 text-xs font-mono text-violet-500 hover:text-violet-400 transition-colors duration-150"
+            >
+              Verified ✓
+            </a>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</div>

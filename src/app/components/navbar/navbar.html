@@ -1,0 +1,65 @@
+<nav
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  [class]="isScrolled() ? 'bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800 shadow-lg' : 'bg-transparent'"
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <a
+        href="#hero"
+        (click)="closeMobile()"
+        class="text-white font-bold text-lg tracking-tight hover:text-violet-400 transition-colors duration-200"
+      >
+        {{ profile.name }}
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#skills" class="text-sm text-zinc-400 hover:text-white transition-colors duration-200">Skills</a>
+        <a href="#projects" class="text-sm text-zinc-400 hover:text-white transition-colors duration-200">Projects</a>
+        <a href="#certifications" class="text-sm text-zinc-400 hover:text-white transition-colors duration-200">Certifications</a>
+        <a href="#experience" class="text-sm text-zinc-400 hover:text-white transition-colors duration-200">Experience</a>
+        <a
+          [href]="'mailto:' + profile.email"
+          class="text-sm px-4 py-2 rounded-lg bg-violet-500 hover:bg-violet-400 text-white font-semibold transition-colors duration-200"
+        >
+          Contact
+        </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button
+        class="md:hidden text-zinc-400 hover:text-white transition-colors duration-200 p-2"
+        (click)="toggleMobile()"
+        aria-label="Toggle menu"
+      >
+        @if (mobileOpen()) {
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        } @else {
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        }
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  @if (mobileOpen()) {
+    <div class="md:hidden bg-zinc-950/98 border-t border-zinc-800 px-4 py-4 flex flex-col gap-4">
+      <a href="#skills" (click)="closeMobile()" class="text-zinc-300 hover:text-violet-400 transition-colors duration-200 py-2">Skills</a>
+      <a href="#projects" (click)="closeMobile()" class="text-zinc-300 hover:text-violet-400 transition-colors duration-200 py-2">Projects</a>
+      <a href="#certifications" (click)="closeMobile()" class="text-zinc-300 hover:text-violet-400 transition-colors duration-200 py-2">Certifications</a>
+      <a href="#experience" (click)="closeMobile()" class="text-zinc-300 hover:text-violet-400 transition-colors duration-200 py-2">Experience</a>
+      <a
+        [href]="'mailto:' + profile.email"
+        (click)="closeMobile()"
+        class="text-sm px-4 py-2 rounded-lg bg-violet-500 hover:bg-violet-400 text-white font-semibold transition-colors duration-200 text-center mt-2"
+      >
+        Contact
+      </a>
+    </div>
+  }
+</nav>

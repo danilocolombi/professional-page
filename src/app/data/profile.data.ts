@@ -26,6 +26,15 @@ export interface Project {
   tags: string[];
 }
 
+export interface WebProject {
+  name: string;
+  tagline: string;
+  description: string;
+  url: string;
+  githubUrl: string;
+  tags: string[];
+}
+
 export interface Certification {
   title: string;
   issuer: string;
@@ -146,7 +155,7 @@ export const PROJECTS: Project[] = [
     name: 'Pipelines Monitor',
     description:
       'Dashboard widget delivering analytics on pipeline executions across your Azure DevOps organization. Tracks run statistics, outcome breakdowns, and average duration.',
-    installs: 446,
+    installs: 447,
     rating: 5,
     reviewCount: 5,
     featured: true,
@@ -177,6 +186,18 @@ export const PROJECTS: Project[] = [
     url: 'https://marketplace.visualstudio.com/items?itemName=danilocolombi.deployment-monitor',
     githubUrl: 'https://github.com/danilocolombi/deployment-monitor',
     tags: ['Azure DevOps', 'TypeScript', 'DORA Metrics'],
+  },
+];
+
+export const WEB_PROJECTS: WebProject[] = [
+  {
+    name: 'Top 5',
+    tagline: 'Five Songs Every Artist Deserves to Be Remembered For',
+    description:
+      'Hand-curated top 5 song lists for the artists that shaped modern music. No streams, no charts — just five tracks every artist deserves to be remembered for.',
+    url: 'https://top-5-ecru.vercel.app/',
+    githubUrl: 'https://github.com/danilocolombi/top-5',
+    tags: ['Angular', 'TypeScript', 'Tailwind CSS', 'Vercel'],
   },
 ];
 

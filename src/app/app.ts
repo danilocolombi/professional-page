@@ -5,12 +5,13 @@ import { HeroComponent } from './components/hero/hero';
 import { ExperienceComponent } from './components/experience/experience';
 import { SkillsComponent } from './components/skills/skills';
 import { ProjectsComponent } from './components/projects/projects';
+import { WebProjectsComponent } from './components/web-projects/web-projects';
 import { CertificationsComponent } from './components/certifications/certifications';
 import { FooterComponent } from './components/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [NavbarComponent, HeroComponent, ExperienceComponent, SkillsComponent, ProjectsComponent, CertificationsComponent, FooterComponent],
+  imports: [NavbarComponent, HeroComponent, ExperienceComponent, SkillsComponent, ProjectsComponent, WebProjectsComponent, CertificationsComponent, FooterComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
